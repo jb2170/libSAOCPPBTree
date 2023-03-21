@@ -57,7 +57,7 @@ namespace SAO::BTree {
   template <typename T>
   void TreeNode<T>::add(
     std::unique_ptr<TreeNode<T>> &this_or_null,
-    std::unique_ptr<T> data
+    std::unique_ptr<T> &&data
   ) {
     if (!this_or_null) {
       this_or_null = std::make_unique<TreeNode<T>>(std::move(data));

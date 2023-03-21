@@ -29,7 +29,7 @@ namespace SAO::BTree {
 
     static void add(
       std::unique_ptr<TreeNode<T>> &this_or_null,
-      std::unique_ptr<T> data
+      std::unique_ptr<T> &&data
     );
 
     static std::unique_ptr<TreeNode<T>> &leftmost_descendent(
