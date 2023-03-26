@@ -11,7 +11,7 @@
 namespace SAO::BTree::Iterators::PreOrder {
 
   template <typename T>
-  Iterator<T>::Iterator(const Tree<T> &iterable) : SAO::Iterator::Iterator<Tree<T>, State<T>, Result<T>>(iterable) {
+  Iterator<T>::Iterator(Tree<T> &iterable) : SAO::Iterator::Iterator<Tree<T>, State<T>, Result<T>>(iterable) {
     if (iterable.root) {
       this->state.path.push(&iterable.root);
     }
@@ -29,7 +29,7 @@ namespace SAO::BTree::Iterators::PreOrder {
 
   template <typename T>
   void Iterator<T>::operator++() {
-    const std::unique_ptr<TreeNode<T>> *head = this->state.path.top();
+    std::unique_ptr<TreeNode<T>> *head = this->state.path.top();
     this->state.path.pop();
     if ((*head)->right) {
       this->state.path.push(&(*head)->right);

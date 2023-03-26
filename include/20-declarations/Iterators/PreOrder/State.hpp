@@ -10,7 +10,7 @@ namespace SAO::BTree::Iterators::PreOrder {
 
   template <typename T>
   struct State {
-    std::stack<const std::unique_ptr<TreeNode<T>> *> path;
+    std::stack<std::unique_ptr<TreeNode<T>> *> path;
   };
 
 }

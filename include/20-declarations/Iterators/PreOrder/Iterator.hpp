@@ -11,7 +11,7 @@ namespace SAO::BTree::Iterators::PreOrder {
 
   template <typename T>
   struct Iterator : SAO::Iterator::Iterator<Tree<T>, State<T>, Result<T>> {
-    Iterator(const Tree<T> &iterable);
+    Iterator(Tree<T> &iterable);
 
     Result<T> operator*();
 
